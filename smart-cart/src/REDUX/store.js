@@ -3,10 +3,8 @@ import thunk from 'redux-thunk';
 import {reducer as mensReducer} from './Men\'s Reducer/reducer';
 
 const Root_Reducer = combineReducers({mensReducer});
-const Middlwware =  applyMiddleware(thunk);
+const Middleware =  applyMiddleware(thunk);
 
-export const store = legacy_createStore(Root_Reducer,Middlwware);
-
-
+export const store = legacy_createStore(Root_Reducer,Middleware);
 
 console.log(store.getState());
