@@ -1,13 +1,17 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
+import { Link as MyLink } from "react-router-dom";
 import React from "react";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MiddleNavbar from "./MiddleNavbar";
 import BottomNavbar from "./BottomNavbar";
-
+import { useDisclosure,useColorMode } from "@chakra-ui/react";
 export const UpperNavbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
   return (
-    <Box>
+    <Box color={isDark&&"white"} >
       <Flex
         justifyContent="space-between"
         marginX={"50px"}
@@ -16,7 +20,7 @@ export const UpperNavbar = () => {
       >
         <Flex gap={30}>
           <Text>
-            Hi! <Link>Sign in</Link> or <Link>register</Link>
+            Hi! <MyLink to="/login">Sign in</MyLink> or <MyLink to="/signup">register</MyLink>
           </Text>
           <Link>Daily Deals</Link>
           <Link>Help & Contact</Link>
