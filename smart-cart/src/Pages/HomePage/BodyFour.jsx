@@ -25,8 +25,7 @@ export const BodyFour = () => {
             border={"1px solid black"}
             borderColor={"rgb(157,121,95)"}
             _hover={{ bg: "RGB(227 188 129)" }}
-          >
-            Shop Now <ArrowForwardIcon />
+          >Shop Now <ArrowForwardIcon />
           </Button>
         </Box>
         <Box>
