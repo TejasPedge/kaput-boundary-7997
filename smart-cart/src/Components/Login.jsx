@@ -41,19 +41,19 @@ const location=useLocation()
     }
   return (
     <>
-    <Box  top="1px" bgRepeat={"no-repeat"} backgroundSize={"Cover"}    backgroundImage={isDark&&"url('https://images.pexels.com/photos/2258536/pexels-photo-2258536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"} height={"700px"}>
+    <Box mb = '60px' top="1px" bgRepeat={"no-repeat"} backgroundSize={"Cover"}    backgroundImage={isDark&&"url('https://images.pexels.com/photos/2258536/pexels-photo-2258536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"} height={"700px"}>
    <Box  textAlign="center" height="50px" backgroundColor="#659DBD">
     <IconButton   display={{base:"inline",md:"inline",lg:"inline",xl:"inline","2xl":"inline"}}  icon={isDark ? <FaSun /> : <FaMoon />} isRound='true' onClick={toggleColorMode}></IconButton>
     </Box>
-<Box backgroundImage={isDark==false &&"url('https://images.pexels.com/photos/9117243/pexels-photo-9117243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"} margin="auto" mt="110px"  className={styles.box2} border="1px solid teal"   width={{base:"90%",md:"40%",lg:"30%",xl:"30%","2xl":"30%"}}>
+<Box p = '30px' backgroundImage={isDark==false &&"url('https://images.pexels.com/photos/9117243/pexels-photo-9117243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"} margin="auto" mt="110px"  className={styles.box2} border="1px solid teal"   width={{base:"90%",md:"40%",lg:"30%",xl:"30%","2xl":"30%"}}>
     <SignLogo/>
     <form onSubmit={handleSubmit}>
 
     <Input className={isDark&&styles.buttons} mt="20px" textAlign={"center"} value={logoutdata.id} name="id"   onChange={handleChange} placeholder="Please Enter Email Address"/>
 <Input className={isDark&&styles.buttons} mt="20px" textAlign={"center"} value={logoutdata.password} name="password"  onChange={handleChange} placeholder="Please Enter Password"/>
 <Button className={isDark&&styles.buttons} width="80%" margin="auto" display={"block"} bg="blue.200" mt="20px"  type="submit">LOGIN</Button>
-<Heading  marginLeft={['8em', '15em', '4em', '3em', '4em', '4em']} display={"inline"} fontWeight={"light"} as="h6" fontSize="13px" >or,Already Have a Account?</Heading>
-<Button className={isDark&&styles.buttons} marginLeft={['8em', '13em', '7em', '1em', '3em', '4em']} marginTop="15px" color="blue"><Link  to="/signup">Sign Up</Link></Button>
+<Heading mt = '20px' textAlign = 'center' color = 'white' fontWeight={"bold"} as="h6" fontSize="16px" >or Create an Account?</Heading>
+<Button className={isDark&&styles.buttons} ml = '150px' marginTop="15px" color="blue"><Link  to="/signup">Sign Up</Link></Button>
     </form></Box>
     </Box>
     </>
