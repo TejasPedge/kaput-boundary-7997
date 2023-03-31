@@ -16,7 +16,7 @@ export const HomePage = () => {
       <Bodytwo />
       <BodyThree />
       <BodyFour />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

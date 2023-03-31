@@ -25,7 +25,7 @@ return (
                 <Text fontSize = '16' color = '#282c3f' fontWeight={700} noOfLines = '1'>{brand}</Text>
                 <Text fontSize = {13} color = 'gray.600' noOfLines={1}>{title}</Text>
                 <Flex align={'center'} >
-                    <Text fontSize = {13.5} fontWeight = '700' color = '#282c3f'>{price}</Text>
+                    <Text fontSize = {13.5} fontWeight = '700' color = '#282c3f'>Rs. {price}</Text>
                     <Text ml = '5px' as = 'del' fontSize={'11'} color = 'gray.500'>{strike_price}</Text>
                     <Text ml = '5px' fontSize={'11'} color = 'green'>{discount}</Text>
                 </Flex>

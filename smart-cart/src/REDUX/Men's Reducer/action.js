@@ -1,4 +1,4 @@
-import { MENS_PRODUCT_REQUEST_MADE, MENS_PRODUCT_REQUEST_SUCCESS, MENS_PRODUCT_REQUEST_FAILURE, TOTAL_MENS_DATA } from "./actiontypes";
+import { MENS_PRODUCT_REQUEST_MADE, MENS_PRODUCT_REQUEST_SUCCESS, MENS_PRODUCT_REQUEST_FAILURE, TOTAL_MENS_DATA, } from "./actiontypes";
 
 import axios from 'axios'
 
@@ -19,9 +19,9 @@ export const getAllData =  (obj) => async (dispatch) => {
             dispatch({type : TOTAL_MENS_DATA, payload : Number(data.headers['x-total-count'])});
 
         }
-    
+
         console.log(data);
-        
+
     } catch (error) {
 
         dispatch({type :MENS_PRODUCT_REQUEST_FAILURE});
