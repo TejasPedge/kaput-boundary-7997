@@ -7,7 +7,6 @@ import Carousel from "./Pages/HomePage/Carousel";
 import Footer from "./Pages/HomePage/Footer";
 import { HotDeals } from "./Pages/HomePage/HotDeals";
 import { UpperNavbar } from "./Pages/HomePage/UpperNavbar";
-
 import Mens from "./Pages/Mens Page/Mens";
 
 function App() {
@@ -16,6 +15,7 @@ function App() {
       {/* <Mens></Mens> */}
     
       <AllRoutes />
+      <Footer />
     </div>
   );
 }

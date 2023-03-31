@@ -6,7 +6,7 @@ const Initial_State = {
 
     Mens_Product : [],
 
-    total : 0,
+    total : null,
 
     isError : false,
 

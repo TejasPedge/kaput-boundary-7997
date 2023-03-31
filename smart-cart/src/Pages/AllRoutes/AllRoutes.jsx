@@ -6,13 +6,15 @@ import Signup from "../../Components/Signup";
 import { HomePage } from "../HomePage/HomePage";
 import { UpperNavbar } from "../HomePage/UpperNavbar";
 import Mens from "../Mens Page/Mens";
+import SingleProcuctPage from "../Mens Page/SingleProcuctPage";
 
 const Routes_Path = [
   { path: "/", element: <HomePage /> },
-  { path: "/MensPage", element:<PrivateRoute> <Mens /></PrivateRoute>},
+  { path: "/MensPage", element:<Mens />},
   {path:"/login",element:<Login/>},
-  {path:"/signup",element:<Signup/>}
+  {path:"/signup",element:<Signup/>},
   // { path: "/WomensPage", element: <Womens /> },
+  { path: "/MensPage/:id", element: <SingleProcuctPage /> },
 ];
 
 const AllRoutes = () => {
