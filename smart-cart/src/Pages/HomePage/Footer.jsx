@@ -58,7 +58,7 @@ export default function Footer() {
             <Stack align={"flex-start"}>
               <ListHeader>Buy</ListHeader>
               <Link href={"#"}>Registration</Link>
-              <Link href={"#"}>eBay Money Back Guarantee</Link>
+              <Link href={"#"}>Money Back Guarantee</Link>
               <Link href={"#"}>Bidding & buying help</Link>
               <Link href={"#"}>Stores</Link>
               <br />
@@ -69,7 +69,7 @@ export default function Footer() {
             </Stack>
 
             <Stack align={"flex-start"}>
-              <ListHeader>About eBay</ListHeader>
+              <ListHeader>About SmartCart</ListHeader>
               <Link href={"#"}>Company info</Link>
               <Link href={"#"}>News</Link>
               <Link href={"#"}>Investors</Link>
@@ -87,7 +87,7 @@ export default function Footer() {
               <Link href={"#"}>Community Guidelines</Link>
               <Link href={"#"}>Announcements</Link>
               <Link href={"#"}>Discussion boards</Link>
-              <Link href={"#"}>eBay Giving Works</Link>
+              <Link href={"#"}>SmartCart Giving Works</Link>
             </Stack>
 
             <Stack align={"flex-start"}>

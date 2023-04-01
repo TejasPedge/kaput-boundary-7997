@@ -5,7 +5,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 export const BodyFour = () => {
   return (
     <div>
-      <Flex justifyContent={"space-between"} marginY={"40px"} marginX={"80px"}>
+      <Flex justifyContent={"space-between"} marginY={"80px"} marginX={"80px"}>
         <Box>
           <Link>
             <Text
@@ -21,10 +21,14 @@ export const BodyFour = () => {
           <Text color={"RGB(105 64 2)"}>From top sellers to your wrist</Text>
           <br />
           <Button
-            bg={"RGB(202 163 103)"}
+            paddingX={"20px"}
+            paddingY={"20px"}
+            bg={"RGB(105 64 2)"}
             border={"1px solid black"}
-            borderColor={"rgb(157,121,95)"}
-            _hover={{ bg: "RGB(227 188 129)" }}
+            borderColor={"RGB(105 64 2)"}
+            color={"RGB(255 216 158)"}
+            _hover={{ bg: "RGB(255 216 158)", color: "RGB(105 64 2)" }}
+            gap={1}
           >
             Shop Now <ArrowForwardIcon />
           </Button>

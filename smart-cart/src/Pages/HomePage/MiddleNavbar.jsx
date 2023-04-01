@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Flex,
@@ -13,12 +13,10 @@ import {
   MenuButton,
   MenuList,
   HStack,
-  VStack,
   MenuItem,
   Image,
   Grid,
 } from "@chakra-ui/react";
-
 import {
   SearchIcon,
   ChevronDownIcon,
@@ -47,8 +45,8 @@ const MiddleNavbar = () => {
                 textDecorationLine={"none"}
                 onClick={() => navigate("/")}
               >
-                <Image src="favicon.ico" ml={4} w="10" alt="SmartBuyers Logo" />
-                <Text fontWeight={600} fontSize={15}>
+                <Image src="favicon.ico" ml={7} w="10" alt="SmartBuyers Logo" />
+                <Text fontWeight={600} fontSize={20}>
                   SmartCart
                 </Text>
               </Link>
@@ -151,7 +149,7 @@ const MiddleNavbar = () => {
           <Box>
             <InputGroup>
               <Input
-                focusBorderColor="rgb(0,151,0)"
+                focusBorderColor="rgb(13,81,45)"
                 w={650}
                 colorScheme="green"
                 bg="white"
@@ -160,23 +158,25 @@ const MiddleNavbar = () => {
               />
               <InputRightElement>
                 <Tooltip
+                  padding={2}
+                  borderRadius={"5px"}
                   hasArrow
                   label="Search Products"
-                  bg="rgb(0,151,0)"
-                  color="white"
+                  bg={"rgb(13,81,45)"}
+                  color={"rgb(161,242,168)"}
                 >
-                  <SearchIcon color={"rgb(0,151,0)"} />
+                  <SearchIcon color={"rgb(13,81,45)"} />
                 </Tooltip>
               </InputRightElement>
             </InputGroup>
           </Box>
           <Button
-            color={"white"}
             paddingX={"40px"}
-            bg={"rgb(0,151,0)"}
-            border={"1px solid"}
-            borderColor={"rgb(0,151,0)"}
-            _hover={{ bg: "rgb(130,196,87)" }}
+            bg={"rgb(13,81,45)"}
+            border={"1px solid black"}
+            borderColor={"rgb(13,81,45)"}
+            color={"rgb(161,242,168)"}
+            _hover={{ bg: "rgb(161,242,168)", color: "rgb(13,81,45)" }}
           >
             Search
           </Button>
