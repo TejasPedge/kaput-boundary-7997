@@ -27,6 +27,8 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
+import Logo_smart_cart from  './LOGO_SMART_CART.png'
+
 const MiddleNavbar = () => {
   const navigate = useNavigate();
 
@@ -47,7 +49,7 @@ const MiddleNavbar = () => {
                 textDecorationLine={"none"}
                 onClick={() => navigate("/")}
               >
-                <Image src="favicon.ico" ml={4} w="10" alt="SmartBuyers Logo" />
+                <Box><Image w = '40px' src={Logo_smart_cart} ml={4} alt="SmartBuyers Logo" /></Box>
                 <Text fontWeight={600} fontSize={15}>
                   SmartCart
                 </Text>

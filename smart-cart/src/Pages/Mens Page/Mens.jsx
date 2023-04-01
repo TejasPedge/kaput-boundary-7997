@@ -213,8 +213,8 @@ return (
             { (isLoading) ?  (<VStack w = '100%' align = 'center' mt = '150px' mb = '100px'>
 
             <CircularProgress isIndeterminate color='blue.300' />
-  
-  </VStack>) :
+
+</VStack>) :
 
         <Box  display = 'flex' >
                 <Sidebar color = {color} handleChangeColor = {handleChangeColor} handleChangeBrand = {handleChangeBrand} brand = {brand} category = {category} handleChangeCategories = {handleChangeCategories}></Sidebar>

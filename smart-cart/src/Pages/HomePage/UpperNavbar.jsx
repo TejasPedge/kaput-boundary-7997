@@ -42,7 +42,7 @@ export const UpperNavbar = () => {
             <option>Messages</option>
           </select>
           <NotificationsNoneOutlinedIcon />
-          <ShoppingCartOutlinedIcon />
+          <MyLink to = '/Cart'><ShoppingCartOutlinedIcon /></MyLink>
         </Flex>
       </Flex>
       <hr />
