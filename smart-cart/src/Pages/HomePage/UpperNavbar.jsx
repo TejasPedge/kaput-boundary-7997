@@ -31,7 +31,7 @@ export const UpperNavbar = () => {
       >
         <Flex gap={30}>
           <Text>
-            Hi! <Link>Sign in</Link> or <Link>register</Link>
+            Hi! <MyLink to="/login">Sign in</MyLink> or <MyLink to="/signup">register</MyLink>
           </Text>
           <Link>Daily Deals</Link>
           <Link>Help & Contact</Link>
