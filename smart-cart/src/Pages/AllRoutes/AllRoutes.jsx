@@ -9,6 +9,7 @@ import Mens from "../Mens Page/Mens";
 import Paymentpage from "../HomePage/Paymentpage";
 import SingleProcuctPage from "../Mens Page/SingleProcuctPage";
 import Cart from './../Mens Page/Cart';
+import Womens from "../WomensPage/Womens";
 
 const Routes_Path = [
   { path: "/", element: <HomePage /> },
@@ -16,7 +17,7 @@ const Routes_Path = [
   {path:"/login",element:<Login/>},
   {path:"/signup",element:<Signup/>},
   {path:"/payment",element:<Paymentpage/>},
-  // { path: "/WomensPage", element: <Womens /> },
+  { path: "/WomensPage", element: <Womens /> },
   { path: "/MensPage/:id", element: <SingleProcuctPage /> },
   { path: "/Cart", element: <Cart /> },
 ];
