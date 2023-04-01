@@ -1,16 +1,17 @@
 import React from 'react'
-
-export const productsArr = () => {
+import {WOMENS_PRODUCT_REQUEST,WOMENS_PRODUCT_SUCCESS,WOMENS_PRODUCT_FAILURE} from "./actionTypes"
+import axios from "axios"
+export const productsArr = ()=>(dispatch) => {
     dispatch({type:WOMENS_PRODUCT_REQUEST})
-    const getData=()=>{
-        axios.get(" http://localhost:8080/women").then((res)=>{
+        axios
+.get("https://smart-cart-db.onrender.com/women").then((res)=>{
             console.log(res.data);
             dispatch({type:WOMENS_PRODUCT_SUCCESS,payload:res.data})
         }).catch(()=>{
             console.log("error");
-            dispatch({type:WOMENS_PRODUCT_FAILED})
+            dispatch({type:WOMENS_PRODUCT_FAILURE})
         })
-    }
+    
   return (
     <div>action</div>
   )
