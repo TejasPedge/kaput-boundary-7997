@@ -20,7 +20,9 @@ export default function Error() {
       <Heading as="h2" size="xl" mt={6} mb={2}>
         Unable to Load Data
       </Heading>
+      <Text>Common Reasons ⬇️⬇️⬇️</Text>
       <Text color={'gray.500'}>Check your Internet and try again by Refreshing the page</Text>
+      <Text color={'gray.500'}>If you are the owner of the Smart Cart : Check the Server</Text>
     </Box>
   );
 }
