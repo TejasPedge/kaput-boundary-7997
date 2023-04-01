@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Box,VStack,CircularProgress, Image, Stack, Text, HStack, Center, Button, SimpleGrid} from '@chakra-ui/react'
 
-import { useParams } from 'react-router-dom'
+import { useParams,Link } from 'react-router-dom'
 
 import {MdPayment} from 'react-icons/md'
 
@@ -157,10 +157,12 @@ return (
                         </Button>
 
                         <Button _hover = {{borderColor : '#066d40', color : '#00693c'}} variant = 'none' border = '1px solid' py = '23px' px = '55px' borderRadius={'3px'}>
+                            <Link to="/payment">
                             <Center>
                                 <MdPayment />
                                 <Text ml = '20px' fontSize = '14'>PROCEED TO CEHECOUT</Text>
                             </Center>
+                            </Link>
                         </Button>
 
                     </HStack>
