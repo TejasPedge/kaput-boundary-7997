@@ -1,19 +1,30 @@
 import React from "react";
-import { Box, Text, SimpleGrid } from "@chakra-ui/react";
+import { Box, Text, SimpleGrid, Flex, HStack } from "@chakra-ui/react";
 import Bodytwocard from "./Bodytwocard";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const Bodytwo = () => {
   return (
     <Box
       fontFamily={"Open Sans, sans-serif, Arial, Helvetica"}
-      mt={"40px"}
+      mt={"70px"}
       mx={20}
     >
-      <Box>
-        <Text fontSize={"24px"} fontWeight={"600"} lineHeight={"32px"} my={3}>
-          Trending Categories
+      <Flex marginY={"15px"} gap={5}>
+        <Text fontSize={"24px"} fontWeight={"600"} lineHeight={"32px"}>
+          Smart Deals
         </Text>
-      </Box>
+        <Text color={"silver"} fontSize={20} fontWeight={400}>
+          |
+        </Text>
+        <HStack>
+          <Text fontSize={"20px"} fontWeight={"500"} lineHeight={"18px"}>
+            See all
+          </Text>
+          <ArrowForwardIcon />
+        </HStack>
+      </Flex>
+
       <Box>
         <SimpleGrid
           spacing={4}
@@ -34,7 +45,7 @@ const Bodytwo = () => {
           <Bodytwocard
             src="https://i.ebayimg.com/thumbs/images/g/YcwAAOSwmnFeBkB6/s-l960.webp"
             heading="Electronics & Equipment"
-            text="From smartphones and laptops to TVs and video game consoles you can find the hottest electronics on eBay."
+            text="From smartphones and laptops to TVs and video game consoles you can find the hottest electronics."
           />
         </SimpleGrid>
       </Box>

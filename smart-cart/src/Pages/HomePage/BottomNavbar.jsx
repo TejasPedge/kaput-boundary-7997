@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
+
 const BottomNavbar = () => {
   return (
     <>
@@ -81,7 +82,7 @@ const BottomNavbar = () => {
                   <MenuItem>Portable audio and headphones</MenuItem>
                   <MenuItem>Emerging brands</MenuItem>
                   <MenuItem>Smart watches</MenuItem>
-                  <MenuItem>Sell on eBay</MenuItem>
+                  <MenuItem>Sell on SmartCart</MenuItem>
                 </Grid>
                 <VStack>
                   <Image src="https://ir.ebaystatic.com/cr/v/c01/ROW-19392_Fallback_Electronics_770x270.png"></Image>
@@ -126,7 +127,7 @@ const BottomNavbar = () => {
                   <MenuItem>Engines and parts</MenuItem>
                   <MenuItem>Accessories</MenuItem>
                   <MenuItem>Exhausts and systems</MenuItem>
-                  <MenuItem>Sell on eBay</MenuItem>
+                  <MenuItem>Sell on SmartCart</MenuItem>
                 </Grid>
                 <VStack>
                   <Image src="https://ir.ebaystatic.com/cr/v/c01/ROW-19399_Fallback_PandA_770x270.png"></Image>
@@ -164,7 +165,7 @@ const BottomNavbar = () => {
                 <Link>
                   <MenuItem>Footwear for women</MenuItem>
                 </Link>
-                <Link to="/MensPage">
+                <Link to={"/MensPage"}>
                   <MenuItem>Men's clothing</MenuItem>
                 </Link>
                 <Link>
@@ -455,12 +456,12 @@ const BottomNavbar = () => {
                   <MenuItem>Seller center</MenuItem>
                   <MenuItem>Seller updates</MenuItem>
                   <MenuItem>Seller customer service</MenuItem>
-                  <MenuItem>eBay managed payments</MenuItem>
+                  <MenuItem>SmartCart managed payments</MenuItem>
                 </Grid>
                 <Grid>
                   <MenuItem>Learn to sell</MenuItem>
-                  <MenuItem>eBay stores</MenuItem>
-                  <MenuItem>eBay fees</MenuItem>
+                  <MenuItem>SmartCart stores</MenuItem>
+                  <MenuItem>SmartCart fees</MenuItem>
                   <MenuItem>Selling limits</MenuItem>
                 </Grid>
                 <VStack>
