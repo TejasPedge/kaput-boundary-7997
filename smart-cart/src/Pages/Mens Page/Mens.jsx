@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllData } from '../../REDUX/Men\'s Reducer/action'
 import { CircularProgress } from '@chakra-ui/react';
 import Error from './ErrorPage'
+import { useSearchParams } from 'react-router-dom'
 
 const Mens = () => {
 
@@ -18,24 +19,160 @@ const Mens = () => {
 
     const {isLoading,isError, total} = data;
 
-    const [page, setPage] = useState(1);
+    const [params,setParams] = useSearchParams();
+
+    let pagenumber = +(params.get('_page'));
+
+    let ordertext = params.get('_order');
+
+    let categoryfromparam = params.getAll('categories');
+
+    let brandfromparam = params.getAll('brand');
+
+    let colorfromparam = params.getAll('color');
+
+    console.log(pagenumber)
+
+    const [page, setPage] = useState(pagenumber || 1);
+
+    const [order, setOrder] = useState(ordertext || "");
+
+    // ---------------------------------------------//
+
+    const [category , setcategory] = useState(categoryfromparam || []);
+
+    const [brand, setbrand] = useState(brandfromparam || []);
+
+    const [color, setcolor] = useState(colorfromparam || []);
+
+    // ---------------------------------------------//
+
 
     useEffect(() => {
-    
-        let params_obj = {_page : page, _limit :50}
-        
+
+        let params_obj = { _page : page, _limit :50, }
+
+
+        if(order !== 'ratings' && order !== "") {
+
+            params_obj['_sort'] = 'price';
+
+            params_obj['_order'] = order;
+
+        }
+
+        if(order === 'ratings' ) {
+
+            params_obj['_sort'] = 'ratings';
+
+            params_obj['_order'] = 'desc';
+
+        }
+
+            params_obj.categories = category;
+
+            params_obj.brand = brand;
+
+            params_obj.color = color;
+
+        setParams({...params_obj,'_order' : params_obj['_sort'] === 'ratings' ? 'ratings' : order });
+
         dispatch(getAllData(params_obj));
-  
-    },[dispatch,page]);
-  
+
+    },[page,order,category,brand,color]);
+
     const ChangePage = (page) => {
-  
-      setPage(page);
-  
+
+        setPage(page);
+
     }
 
-    
-    console.log('rerendered mens');
+    const SortBy = (e) => {
+
+        const {value} = e.target;
+
+            setOrder(value);
+
+            console.log(value);
+
+        }
+
+        // -----------------Filter by category-------------//
+
+        const handleChangeCategories = (e) => {
+
+            const {value} = e.target;
+
+            let arr = [...category];
+
+            if(arr.includes(value)) {
+                arr = arr.filter((el) => el !== value);
+            }else {
+                arr.push(value);
+            }
+
+            setcategory(arr);
+
+            console.log(value);
+
+        }
+
+        // -----------------Filter by brand name ----------------
+
+        const handleChangeBrand = (e) => {
+
+            const {value} = e.target;
+
+            let arr = [...brand];
+
+            if(arr.includes(value)) {
+
+                arr = arr.filter((el) => el !== value);
+
+            }else {
+
+                arr.push(value);
+
+            }
+
+            setbrand(arr);
+
+        }
+
+
+        // -----------------Filter by color-------------//
+
+        const handleChangeColor = (e) => {
+
+            const {value} = e.target;
+
+            let arr = [...color];
+
+            if(arr.includes(value)) {
+
+                arr = arr.filter((el) => el!== value)
+
+            }else {
+
+                arr.push(value);
+
+            }
+
+            setcolor(arr);
+
+
+
+
+
+        }
+
+
+        
+
+
+
+
+    console.log('rerendered mens',color);
 
     if(isError) {
 
@@ -57,11 +194,11 @@ return (
 
         <Box mt = '20px' display = 'flex' justifyContent={'space-between'} alignItems = 'center'>
             <Text fontWeight={600}>FILTERS</Text>
-            <Select border = '1px solid' borderColor = 'rgb(182, 182, 182)' variant = 'none' w = '300px' size='md' >
-                <option value="default">Sort By : Recommended</option>
-                <option value="H-to-L">Price : High to Low</option>
-                <option value="L-to-H">Price : Low to High</option>
-                <option value="rating">Customer Ratings</option>
+            <Select value = {order} onChange = {SortBy} border = '1px solid' borderColor = 'rgb(182, 182, 182)' variant = 'none' w = '300px' size='md' >
+                <option value="">Sort By : Recommended</option>
+                <option value="desc">Price : High to Low</option>
+                <option value="asc">Price : Low to High</option>
+                <option value="ratings">Customer Ratings</option>
             </Select>
         </Box>
 
@@ -73,15 +210,15 @@ return (
     <Box borderTop={'1px solid rgb(182, 182, 182)'} >
 
         <Box pl = '25px' margin={'auto'} >
-            { (isLoading) ?  (<VStack w = '100%' align = 'center' mt = '150px'>
+            { (isLoading) ?  (<VStack w = '100%' align = 'center' mt = '150px' mb = '100px'>
 
             <CircularProgress isIndeterminate color='blue.300' />
-  
-  </VStack>) :
+
+</VStack>) :
 
         <Box  display = 'flex' >
-                <Sidebar></Sidebar>
-                <AllProducts ChangePage = {ChangePage}></AllProducts>
+                <Sidebar color = {color} handleChangeColor = {handleChangeColor} handleChangeBrand = {handleChangeBrand} brand = {brand} category = {category} handleChangeCategories = {handleChangeCategories}></Sidebar>
+                <AllProducts page = {page} ChangePage = {ChangePage}></AllProducts>
         </Box>
 }
         </Box>

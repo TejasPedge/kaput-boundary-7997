@@ -59,7 +59,7 @@ export default function Carousel() {
   return (
     <Box
       mx={"20"}
-      my={"5"}
+      my={"10"}
       fontFamily={"Open Sans, sans-serif, Arial, Helvetica"}
     >
       <Box

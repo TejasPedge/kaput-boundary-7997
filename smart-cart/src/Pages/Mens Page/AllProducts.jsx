@@ -1,20 +1,26 @@
 import React from 'react'
 import { Box,SimpleGrid, VStack} from '@chakra-ui/react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import ProductCard from './ProductCard'
 import PaginationComp from './Pagination'
+import Noresult from './Noresult'
+import { Link } from 'react-router-dom'
 
-const AllProducts = ({ChangePage}) => {
+const AllProducts = ({ChangePage, page}) => {
 
   const data = useSelector(({mensReducer}) => mensReducer) 
 
-  const {isLoading,Mens_Product,isError, total} = data;
+  const {Mens_Product, total} = data;
 
+  if(total === 0) {
 
+    return <Box>
+      <Noresult/>
+    </Box>
+
+  }
 
   console.log('rerendered',data);
-
-
 
   return (
     <Box w = '100%' p = '25px'>
@@ -24,7 +30,7 @@ const AllProducts = ({ChangePage}) => {
         </SimpleGrid>
 
         <Box>
-          {Mens_Product.length !== 0 ? <PaginationComp total = {total} ChangePage = {ChangePage}/> : null}
+          {Mens_Product.length !== 0 ? <PaginationComp page = {page} total = {total} ChangePage = {ChangePage}/> : null}
         </Box>
 
     </Box>
