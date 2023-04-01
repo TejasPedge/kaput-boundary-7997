@@ -20,16 +20,13 @@ const AllProducts = ({ChangePage, page}) => {
 
   }
 
-
   console.log('rerendered',data);
-
-
 
   return (
     <Box w = '100%' p = '25px'>
 
         <SimpleGrid gap = '20px' columns={5}>
-                {Mens_Product.map((el) => <Link key = {el.id} to = {`/MensPage/${el.id}`} ><ProductCard {...el} /> </Link>)}
+                {Mens_Product.map((el) => <ProductCard key = {el.id} {...el} /> )}
         </SimpleGrid>
 
         <Box>

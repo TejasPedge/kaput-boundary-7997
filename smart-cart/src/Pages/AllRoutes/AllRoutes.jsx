@@ -7,6 +7,7 @@ import { HomePage } from "../HomePage/HomePage";
 import { UpperNavbar } from "../HomePage/UpperNavbar";
 import Mens from "../Mens Page/Mens";
 import SingleProcuctPage from "../Mens Page/SingleProcuctPage";
+import Cart from './../Mens Page/Cart';
 
 const Routes_Path = [
   { path: "/", element: <HomePage /> },
@@ -15,6 +16,7 @@ const Routes_Path = [
   {path:"/signup",element:<Signup/>},
   // { path: "/WomensPage", element: <Womens /> },
   { path: "/MensPage/:id", element: <SingleProcuctPage /> },
+  { path: "/Cart", element: <Cart /> },
 ];
 
 const AllRoutes = () => {

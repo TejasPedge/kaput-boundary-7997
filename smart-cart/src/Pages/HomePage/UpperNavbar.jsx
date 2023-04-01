@@ -7,13 +7,14 @@ import {
   MenuItem,
   MenuList,
   Text,
+  Link,
 } from "@chakra-ui/react";
 import React from "react";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MiddleNavbar from "./MiddleNavbar";
 import BottomNavbar from "./BottomNavbar";
-import { Link } from "react-router-dom";
+import { Link as MyLink } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
 export const UpperNavbar = () => {
@@ -59,9 +60,9 @@ export const UpperNavbar = () => {
             </MenuList>
           </Menu>
           <NotificationsNoneOutlinedIcon />
-          <Link>
+          <MyLink to="/Cart">
             <ShoppingCartOutlinedIcon />
-          </Link>
+          </MyLink>
         </Flex>
       </Flex>
       <hr />

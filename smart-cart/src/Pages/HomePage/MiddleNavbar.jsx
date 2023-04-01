@@ -16,6 +16,7 @@ import {
   MenuItem,
   Image,
   Grid,
+  Avatar,
 } from "@chakra-ui/react";
 import {
   SearchIcon,
@@ -24,6 +25,8 @@ import {
 } from "@chakra-ui/icons";
 
 import { useNavigate } from "react-router-dom";
+
+import Logo_smart_cart from "./favicon.ico";
 
 const MiddleNavbar = () => {
   const navigate = useNavigate();
@@ -45,8 +48,15 @@ const MiddleNavbar = () => {
                 textDecorationLine={"none"}
                 onClick={() => navigate("/")}
               >
-                <Image src="favicon.ico" ml={7} w="10" alt="SmartBuyers Logo" />
-                <Text fontWeight={600} fontSize={20}>
+                <Box>
+                  <Image
+                    w="40px"
+                    src={Logo_smart_cart}
+                    ml={4}
+                    alt="SmartBuyers Logo"
+                  />
+                </Box>
+                <Text fontWeight={600} fontSize={15}>
                   SmartCart
                 </Text>
               </Link>
