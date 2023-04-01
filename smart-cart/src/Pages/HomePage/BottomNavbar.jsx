@@ -16,7 +16,7 @@ const BottomNavbar = () => {
   return (
     <>
       <Flex justifyContent={"space-between"} marginX={"70px"} marginY={"10px"}>
-        <Link>
+        <Link to="/payment">
           <Menu w="10px">
             <MenuButton
               fontSize={"15px"}
