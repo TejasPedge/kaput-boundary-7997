@@ -257,7 +257,7 @@ Payment...
 <Heading as="h6" size="sm"><span>Discount<span style={{marginRight:"110px"}}></span>5%</span></Heading>
 <Heading as="h6" size="sm"><span>Convenience Fee..<span style={{marginRight:"140px"}}></span>Free</span></Heading>
 <Box border="1px solid grey"></Box>
-<Heading as="h6" size="sm"><span>Total Price<span style={{marginRight:"100px"}}></span>{Number(finalprice)>0?Number(totalprice)*5/100:"0"}</span></Heading>
+<Heading as="h6" size="sm"><span>Total Price<span style={{marginRight:"100px"}}></span>{Number(finalprice)>0?Number(totalprice)-Number(totalprice)*5/100:"0"}</span></Heading>
 
 </Box>
 
