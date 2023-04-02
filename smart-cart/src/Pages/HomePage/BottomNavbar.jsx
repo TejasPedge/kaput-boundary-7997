@@ -17,7 +17,7 @@ const BottomNavbar = () => {
   return (
     <>
       <Flex justifyContent={"space-between"} marginX={"70px"} marginY={"10px"}>
-        <Link to="/">
+        <Link to="/admin">
           <Menu w="10px">
             <MenuButton
               fontSize={"15px"}

@@ -26,6 +26,10 @@ const initialdataaddress={
 }
 export default function Paymentpage() {
   const [otpdata,setOtpdata]=useState(initialdata)
+  const [finalprice,setFinalprice]=useState(JSON.parse(localStorage.getItem("Final_price"))||0)
+  const [totalprice,setTotalprice]=useState(JSON.parse(localStorage.getItem(("total_price")))||0)
+  const [cartdata,setCartdata]=useState(JSON.parse(localStorage.getItem("cart_data"))||[])
+  // console.log(cartdata)
   const [carddata,setCarddata]=useState(initiadatacard)
   const [addressdata,setAddressdata]=useState(initialdataaddress)
   const [value,setValue]=useState("")
@@ -109,17 +113,34 @@ const handleotp2=(e)=>{
   // console.log(x)
   console.log(otpvalue)
    Number(x)==otpvalue?alert("Order Placed Successfylly"):alert("OTP Mismatch")
+   if(Number(x)==otpvalue){
+    localStorage.setItem("placeorder",JSON.stringify(cartdata))
+    alert("Yeah.. Order Placed Successfully")
+    navigate("/")
+   }
+   else{
+    alert("OH NO! OTP MisMatch")
+   }
+
 setOtpdata(initialdata)
-if(Number(x)==otpvalue){
- navigate("/")}
+// if(Number(x)==otpvalue){
+//  navigate("/")}
 
   }
  const handleotp2submit=()=>{
-    Number(x)==otpvalue?alert("Order Placed Successfylly"):alert("OTP Mismatch")
-    setOtpdata(initialdata)
+    // Number(x)==otpvalue?alert("Order Placed Successfully"):alert("OTP Mismatch")
     if(Number(x)==otpvalue){
-     navigate("/")
-  }}
+      localStorage.setItem("placeorder",JSON.stringify(cartdata))
+      alert("Order Placed Successfully")
+      navigate("/")
+    }
+    else{
+      alert("OTP Mismatch")
+    }
+    setOtpdata(initialdata)
+    // if(Number(x)==otpvalue){
+    //  navigate("/")
+  }
   // useEffect(()=>{
   //   setOtpinput(true)
   // },[otpvalue])
@@ -232,11 +253,11 @@ Payment...
   {/* <Box><Heading as="h6" display={"block"}  color="red.200" size="md">SMART-CART</Heading></Box> */}
     <Heading as="h6" mt="60px" size="sm">Khussiyon ki Dukan...</Heading></Box>
    <Box border="1px solid grey"></Box>
-<Heading as="h6" size="sm"><span>Total MRP<span style={{marginRight:"100px"}}></span>300</span></Heading>
-<Heading as="h6" size="sm"><span>Discount<span style={{marginRight:"120px"}}></span>5%</span></Heading>
-<Heading as="h6" size="sm"><span>Convenience Fee..<span style={{marginRight:"150px"}}></span>Free</span></Heading>
+<Heading as="h6" size="sm"><span>Total MRP<span style={{marginRight:"100px"}}></span>{Number(finalprice)>0?Number(finalprice):"0"}</span></Heading>
+<Heading as="h6" size="sm"><span>Discount<span style={{marginRight:"110px"}}></span>5%</span></Heading>
+<Heading as="h6" size="sm"><span>Convenience Fee..<span style={{marginRight:"140px"}}></span>Free</span></Heading>
 <Box border="1px solid grey"></Box>
-<Heading as="h6" size="sm"><span>Total Price<span style={{marginRight:"100px"}}></span>300</span></Heading>
+<Heading as="h6" size="sm"><span>Total Price<span style={{marginRight:"100px"}}></span>{Number(finalprice)>0?Number(totalprice)*5/100:"0"}</span></Heading>
 
 </Box>
 
