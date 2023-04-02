@@ -13,14 +13,15 @@ import Adminpage from "../HomePage/Admin/Adminpage";
 import ADD from "../HomePage/Admin/ADD";
 import Delete from "../HomePage/Admin/Delete";
 import Update from "../HomePage/Admin/Update";
+import Womens from "../WomensPage/Womens";
 
 const Routes_Path = [
   { path: "/", element: <HomePage /> },
   { path: "/MensPage", element:<Mens />},
   {path:"/login",element:<Login/>},
   {path:"/signup",element:<Signup/>},
-  {path:"/payment",element:<Paymentpage/>},
-  // { path: "/WomensPage", element: <Womens /> },
+  {path:"/payment",element:<PrivateRoute><Paymentpage/></PrivateRoute>},
+  { path: "/WomensPage", element: <Womens /> },
   { path: "/MensPage/:id", element: <SingleProcuctPage /> },
   {path:"/admin",element:<Adminpage/>},
   {path:"/Dashboard",element:<Adminpage/>},

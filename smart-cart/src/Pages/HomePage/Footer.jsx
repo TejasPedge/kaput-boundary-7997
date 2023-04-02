@@ -13,6 +13,7 @@ import {
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import SmartCartLOGO from "./favicon.ico"
 
 const ListHeader = ({ children }) => {
   return (
@@ -114,7 +115,7 @@ export default function Footer() {
             justify={{ md: "space-between" }}
             align={{ md: "center" }}
           >
-            <Image src="favicon.ico" w="10" alt="Logo" />
+            <Image src={SmartCartLOGO} w="10" alt="Logo" />
             <Text>© SmartCart : Better For You. All rights reserved</Text>
             <Stack direction={"row"} spacing={6}>
               <SocialButton label={"Twitter"} href={"#"}>
