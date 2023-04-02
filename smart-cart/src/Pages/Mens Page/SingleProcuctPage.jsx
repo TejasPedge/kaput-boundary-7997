@@ -21,6 +21,8 @@ import { AiFillStar } from 'react-icons/ai'
 import { Divider } from '@chakra-ui/react'
 import {useState} from 'react'
 import {BsFillHandbagFill} from 'react-icons/bs'
+import { useToast } from '@chakra-ui/react'
+
 // import ReactImageMagnify from 'react-image-magnify';
 // import style from './Singleproductpage.module.css'
 
@@ -36,23 +38,24 @@ const SingleProcuctPage = () => {
 // size
 // strike_price
 // title
-    const [sizes] = useState(['S','M','L','XL','XXL']);
 
-    const [selectedSize, setSelectedSize] = useState('');
-
+    const toast = useToast();
+    
     let {id} = useParams();
 
     id = +(id) ;
 
     const [data,loading,error] =  useGetSingleProductData(`${process.env.REACT_APP_SMART_CART_BASE_URL}/MensProducts?id=${id}`);
 
+    const [sizes] = useState(['S','M','L','XL','XXL']);
+
+    const [selectedSize, setSelectedSize] = useState(data[0]?.size || 'M');
+
     let page = id;
 
+    if( id > 81) {
 
-
-    if( id >= 30) {
-
-        page = 5;
+        page = 12;
 
     }
 
@@ -64,11 +67,80 @@ const SingleProcuctPage = () => {
 
     }
 
+    const handleCartData  = () => {
+
+        let arr = JSON.parse(localStorage.getItem('cart_data')) || [];
+
+        console.log(selectedSize, 'inside handleCart function');
+
+        let obj = {
+
+            id : data[0]?.id,
+
+            discount : data[0]?.discount,
+
+            image : data[0]?.image,
+
+            price : data[0]?.price,
+
+            ratings : data[0]?.ratings,
+            
+            rating_count : data[0]?.rating_count,
+
+            size : selectedSize,
+            
+            title : data[0]?.title,
+            
+            strike_price : data[0]?.strike_price,
+            
+            brand : data[0]?.brand,
+
+            count : 1
+
+            };
+
+        let Already_present_in_cart = false;
+
+        arr = arr.map((el) => {
+
+            if(el.id === id) {
+
+            Already_present_in_cart = true;
+
+            let count = el.count+1;
+
+            return {...el, size : selectedSize, count : count, price : el.price * count};
+
+            }else {
+                return el;
+            }
+
+        })
+
+        console.log(Already_present_in_cart);
+
+        if(!Already_present_in_cart) {
+            arr.push(obj);
+        }
+
+        localStorage.setItem('cart_data',JSON.stringify(arr));
+
+        toast({
+            title: `Item Added to Cart Successfully`,
+            position: 'top',
+            status: 'success',
+            isClosable: true,
+        })
+        console.log('hii',id);
+    }
+
 
 
     // const {image,brand,discount,size,price,title,ratings,rating_count,strike_price} = x;
 
         console.log(data2);
+        console.log(selectedSize);
+
 
     if (loading) {
 
@@ -83,6 +155,7 @@ const SingleProcuctPage = () => {
 
     }
 
+   
 
 return (
     <Box p = '25px'>
@@ -149,7 +222,7 @@ return (
                     </HStack>
 
                     <HStack mt = '30px'>
-                        <Button _hover = {{background : '#f05287'}} py = '23px' px = '65px' borderRadius={'3px'} bg = '#ff236c' color = 'white'>
+                        <Button onClick = {() => handleCartData()} _hover = {{background : '#f05287'}} py = '23px' px = '65px' borderRadius={'3px'} bg = '#ff236c' color = 'white'>
                             <Center>
                                 <BsFillHandbagFill />
                                 <Text ml = '20px' fontSize = '14'>ADD TO CART</Text>
