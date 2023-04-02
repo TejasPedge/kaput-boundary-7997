@@ -3,8 +3,11 @@ import {Box, Flex, Image, Text, Button, Stack} from '@chakra-ui/react'
 import {AiFillStar} from 'react-icons/ai'
 import {Link} from 'react-router-dom'
 import style from './Productcard.module.css'
+import { useToast } from '@chakra-ui/react'
 
-const ProductCard = ({id,discount,image,price,ratings,rating_count,size,title,strike_price,brand }) => {
+const ProductCard = ({id,discount,image,price,ratings,rating_count,size,title,strike_price,brand,setAddedtoCart }) => {
+
+    const toast = useToast();
 
     const handleCartData = () => {
 
@@ -20,7 +23,9 @@ const ProductCard = ({id,discount,image,price,ratings,rating_count,size,title,st
 
             Already_present_in_cart = true;
 
-            return {...el, count : el.count+1};
+            let count = el.count+1;
+
+            return {...el, count : count, price : el.price * count};
 
             }else {
                 return el;
@@ -38,9 +43,24 @@ const ProductCard = ({id,discount,image,price,ratings,rating_count,size,title,st
 
         
 
-        localStorage.setItem('cart_data',JSON.stringify(arr))
+        localStorage.setItem('cart_data',JSON.stringify(arr));
 
-        console.log('hii',id)
+        toast({
+            title: `Item Added to Cart Successfully`,
+            position: 'top',
+            status: 'success',
+            isClosable: true,
+        })
+
+        if(setAddedtoCart) {
+
+            setAddedtoCart((prev) => !prev);
+
+        }
+
+        
+
+        console.log('hii',id);
 
     }
 

@@ -16,7 +16,7 @@ const Routes_Path = [
   { path: "/MensPage", element:<Mens />},
   {path:"/login",element:<Login/>},
   {path:"/signup",element:<Signup/>},
-  {path:"/payment",element:<Paymentpage/>},
+  {path:"/payment",element:<PrivateRoute><Paymentpage/></PrivateRoute>},
   { path: "/WomensPage", element: <Womens /> },
   { path: "/MensPage/:id", element: <SingleProcuctPage /> },
   { path: "/Cart", element: <Cart /> },
