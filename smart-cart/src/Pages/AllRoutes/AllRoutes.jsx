@@ -14,7 +14,7 @@ import ADD from "../HomePage/Admin/ADD";
 import Delete from "../HomePage/Admin/Delete";
 import Update from "../HomePage/Admin/Update";
 import Womens from "../WomensPage/Womens";
-
+import AdminLogin from "../HomePage/Admin/AdminLogin";
 const Routes_Path = [
   { path: "/", element: <HomePage /> },
   { path: "/MensPage", element:<Mens />},
@@ -28,6 +28,7 @@ const Routes_Path = [
   {path:"/ADDProduct",element:<ADD/>},
   {path:"/DeleteProduct",element:<Delete/>},
   {path:"/UpdateProduct",element:<Update/>},
+  {path:"/adminlogin",element:<AdminLogin/>},
   
   
   { path: "/Cart", element: <Cart /> },

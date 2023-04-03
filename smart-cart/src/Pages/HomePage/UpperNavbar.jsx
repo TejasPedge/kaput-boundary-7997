@@ -63,6 +63,9 @@ export const UpperNavbar = () => {
           <MyLink to="/Cart">
             <ShoppingCartOutlinedIcon />
           </MyLink>
+          <MyLink to="/adminlogin">
+            Admin
+          </MyLink>
         </Flex>
       </Flex>
       <hr />
