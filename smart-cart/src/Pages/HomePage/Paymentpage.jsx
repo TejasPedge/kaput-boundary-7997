@@ -73,7 +73,18 @@ setAddressdata((pre)=>({...pre,[name]:value}))
    
 
 
+
   }
+
+
+  // local storage data
+
+  let cartData = JSON.parse(localStorage.getItem('cart_data'));
+
+  let totalItems = cartData.length;
+
+
+
 const handleotp2=(e)=>{
   e.preventDefault()
   const {name,mobile,pincode,address,locality}=addressdata
@@ -150,12 +161,12 @@ setOtpdata(initialdata)
   // console.log(value)
   return (
     <>
-    <Box height="830px" bgRepeat={"no-repeat"} backgroundSize={"Cover"} backgroundImage={"url('https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"}>
+    <Box  height="830px" bgRepeat={"no-repeat"} backgroundSize={"Cover"} backgroundImage={"url('https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"}>
   <Box     textAlign="center" color={"teal"}>
 Payment...
     </Box>
     
-    <Box margin="auto" className={styles.box2} gap="100px" mt="50px"  mb={"50px"} width="80%" display="flex" flexDirection={"row"}>
+    <Box bg ='rgba(2, 255, 196, 0.515)' margin="auto" className={styles.box2} gap="100px" mt="50px"  mb={"50px"} width="80%" display="flex" flexDirection={"row"}>
 <Box border="1px solid teal" className={styles.box3} width="60%" >
   <Box width="90%" margin="auto">
 <Box ><h3 style={{fontWeight:"bold"}}>Bank Offer</h3>
@@ -244,20 +255,20 @@ Payment...
   </Box>
 </Box>
 </Box></Box></Box>
-<Box  border="1px solid gray" className={styles.box3} width="30%"  >
+<Box bg = 'rgba(58, 253, 87, 0.515)' border="1px solid gray" className={styles.box3} width="30%"  >
 
-<Heading as="h6" textAlign={"center"} size="md" mt="50px">Smart-cart</Heading>
-  <p style={{textAlign:"center",fontWeight:"bold",marginTop:"50px"}}>Price Details({} items)</p>
-  <Box className={styles.box7} border="1px solid teal" width="70%" margin="auto">
+<Heading bg = 'red' as="h6" textAlign={"center"} size="md" mt="50px">Smart-cart</Heading>
+  <p style={{textAlign:"center",fontWeight:"bold",marginTop:"50px", marginBottom : '10px'}}>Price Details({totalItems} items)</p>
+  <Box  className={styles.box7} border="1px solid teal" width="70%" margin="auto">
   <Box display={"flex"}> <Box><Image display={"inline"} src="https://constant.myntassets.com/checkout/assets/img/gift-big.webp"/></Box> 
   {/* <Box><Heading as="h6" display={"block"}  color="red.200" size="md">SMART-CART</Heading></Box> */}
-    <Heading as="h6" mt="60px" size="sm">Khussiyon ki Dukan...</Heading></Box>
+    <Heading  as="h6" mt="60px" size="sm">Khussiyon ki Dukan...</Heading></Box>
    <Box border="1px solid grey"></Box>
-<Heading as="h6" size="sm"><span>Total MRP<span style={{marginRight:"100px"}}></span>{Number(finalprice)>0?Number(finalprice):"0"}</span></Heading>
-<Heading as="h6" size="sm"><span>Discount<span style={{marginRight:"110px"}}></span>5%</span></Heading>
-<Heading as="h6" size="sm"><span>Convenience Fee..<span style={{marginRight:"140px"}}></span>Free</span></Heading>
+<Heading mt = '10px' ml = '10px' mr = '5px' as="h6" size="sm"><span>Total MRP<span style={{marginRight:"100px"}}></span>{Number(finalprice)>0?Number(finalprice):"0"}</span></Heading>
+<Heading ml = '10px' mr = '5px' as="h6" size="sm"><span>Discount<span style={{marginRight:"110px"}}></span>5%</span></Heading>
+<Heading mb = '10px' ml = '10px' mr = '5px' as="h6" size="sm"><span>Convenience Fee..<span style={{marginRight:"140px"}}></span>Free</span></Heading>
 <Box border="1px solid grey"></Box>
-<Heading as="h6" size="sm"><span>Total Price<span style={{marginRight:"100px"}}></span>{Number(finalprice)>0?Number(totalprice)-Number(totalprice)*5/100:"0"}</span></Heading>
+<Heading mt = '10px' mb = '10px'  ml = '10px' mr = '5px' as="h6" size="sm"><span>Total Price<span style={{marginRight:"100px"}}></span>{Number(finalprice)>0?Number(totalprice)-Number(totalprice)*5/100:"0"}</span></Heading>
 
 </Box>
 
