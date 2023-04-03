@@ -15,11 +15,11 @@ export default function Adminpage() {
       </Box>
 
   <Box width="100%">
-   <Box gap="20px" mt={"20px"} display={"flex"}> <Box><Heading display="inline" as="h6" size="md">Total Product In Your Cart</Heading></Box>
+   {/* <Box gap="20px" mt={"20px"} display={"flex"}> <Box><Heading display="inline" as="h6" size="md">Total Product In Your Cart</Heading></Box>
    <Box  width="5%" border="1px solid gray"><Box  gap="5px" display="flex"><Box>{cartdata.length>0?cartdata.length:"0"}</Box><Box><FaCartPlus  display="inline"/></Box></Box></Box>
-    </Box>
+    </Box> */}
 
-    <Heading mt="30px" textAlign={"center"} as="h6" size="md">YOUR ORDER STATUS</Heading>
+    <Heading mt="30px" textAlign={"center"} as="h6" size="md">.......ORDER STATUS..........</Heading>
     {data.length!==0?
   
   <TableContainer>
