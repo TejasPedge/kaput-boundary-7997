@@ -159,7 +159,7 @@ const BottomNavbar = () => {
                 <Link>
                   <MenuItem>Footwear</MenuItem>
                 </Link>
-                <Link to = '/WomensPage'>
+                <Link to = '#'>
                   <MenuItem>Women's clothing</MenuItem>
                 </Link>
                 <Link>

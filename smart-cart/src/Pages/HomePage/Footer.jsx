@@ -116,7 +116,7 @@ export default function Footer() {
             align={{ md: "center" }}
           >
             <Image src={SmartCartLOGO} w="10" alt="Logo" />
-            <Text>© SmartCart : Better For You. All rights reserved</Text>
+            <Text>© SmartCart : Made by <Link isExternal style = {{textDecoration : 'underline'}} href = 'https://www.instagram.com/tejas_pedge/'>Tejas Pedge </Link> | Shivam Pasavan | Sonu Prajapati</Text>
             <Stack direction={"row"} spacing={6}>
               <SocialButton label={"Twitter"} href={"#"}>
                 <TwitterIcon />

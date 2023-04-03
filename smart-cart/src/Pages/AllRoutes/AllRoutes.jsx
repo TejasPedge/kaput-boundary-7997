@@ -21,7 +21,7 @@ const Routes_Path = [
   {path:"/login",element:<Login/>},
   {path:"/signup",element:<Signup/>},
   {path:"/payment",element:<PrivateRoute><Paymentpage/></PrivateRoute>},
-  { path: "/WomensPage", element: <Womens /> },
+  // { path: "/WomensPage", element: <Womens /> },
   { path: "/MensPage/:id", element: <SingleProcuctPage /> },
   {path:"/admin",element:<Adminpage/>},
   {path:"/Dashboard",element:<Adminpage/>},
