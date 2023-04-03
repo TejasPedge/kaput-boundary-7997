@@ -32,6 +32,7 @@ This project is a clone of the popular e-commerce website, eBay. It functions si
 - `CSS`
 - `Javascript`
 - `React`
+- `Redux`
 - `Node.js`
 - `Chakra UI`
 - `Material UI`
