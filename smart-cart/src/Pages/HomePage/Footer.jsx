@@ -13,7 +13,7 @@ import {
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import SmartCartLOGO from "./favicon.ico"
+import SmartCartLOGO from "./favicon.ico";
 
 const ListHeader = ({ children }) => {
   return (
@@ -116,7 +116,10 @@ export default function Footer() {
             align={{ md: "center" }}
           >
             <Image src={SmartCartLOGO} w="10" alt="Logo" />
-            <Text>© SmartCart : Made by <Link isExternal style = {{textDecoration : 'underline'}} href = 'https://www.instagram.com/tejas_pedge/'>Tejas Pedge </Link> | Shivam Pasavan | Sonu Prajapati</Text>
+            <Text>
+              © SmartCart : Made by - Shivam Pasvan | Tejas Pedge | Sonu
+              Prajapati
+            </Text>
             <Stack direction={"row"} spacing={6}>
               <SocialButton label={"Twitter"} href={"#"}>
                 <TwitterIcon />
