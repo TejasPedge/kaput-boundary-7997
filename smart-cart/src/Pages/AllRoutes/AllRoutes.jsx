@@ -8,6 +8,8 @@ import { UpperNavbar } from "../HomePage/UpperNavbar";
 import Mens from "../Mens Page/Mens";
 import Paymentpage from "../HomePage/Paymentpage";
 import SingleProcuctPage from "../Mens Page/SingleProcuctPage";
+import SingleWomenPage from "../WomensPage/SingleProcuctPage";
+
 import Cart from './../Mens Page/Cart';
 import Adminpage from "../HomePage/Admin/Adminpage";
 import ADD from "../HomePage/Admin/ADD";
@@ -21,7 +23,8 @@ const Routes_Path = [
   {path:"/login",element:<Login/>},
   {path:"/signup",element:<Signup/>},
   {path:"/payment",element:<PrivateRoute><Paymentpage/></PrivateRoute>},
-  // { path: "/WomensPage", element: <Womens /> },
+  { path: "/womensPage", element: <Womens /> },
+  { path: "/womensPage/:id", element: <SingleWomenPage /> },
   { path: "/MensPage/:id", element: <SingleProcuctPage /> },
   {path:"/admin",element:<Adminpage/>},
   {path:"/Dashboard",element:<Adminpage/>},

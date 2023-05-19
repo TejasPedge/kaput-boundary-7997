@@ -2,7 +2,7 @@ import React from 'react'
 import { Box,SimpleGrid, VStack} from '@chakra-ui/react'
 import { useSelector } from 'react-redux'
 import ProductCard from './ProductCard'
-import PaginationComp from './Pagination'
+import PaginationComp from '../WomensPage/Pagination'
 import Noresult from './Noresult'
 import { Link } from 'react-router-dom'
 
