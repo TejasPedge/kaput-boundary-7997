@@ -1,28 +1,40 @@
-import React, { useEffect } from 'react'
-import { Box } from '@chakra-ui/react'
-import {useDispatch, useSelector} from "react-redux"
-import { productsArr } from '../../REDUX/WomensReducer/action'
-import { SimpleGrid } from '@chakra-ui/react'
+import React from 'react'
+import { Box,SimpleGrid, VStack} from '@chakra-ui/react'
+import { useSelector } from 'react-redux'
+import ProductCard from './ProductCard'
+import PaginationComp from './Pagination'
+import Noresult from './Noresult'
+import { Link } from 'react-router-dom'
 
-import ProductCard from "./ProductCard"
-const AllProducts = () => {
-  const dispatch=useDispatch()
-  const data=useSelector(({womensReducer})=> womensReducer.products)
+const AllProducts = ({ChangePage, page}) => {
 
- console.log(data);
-  useEffect(()=>{
-    dispatch(productsArr())
-  },[])
+  const data = useSelector(({womensReducer}) => womensReducer) 
+
+  const {Womens_Product, total} = data;
+
+  if(total === 0) {
+
+    return <Box>
+      <Noresult/>
+    </Box>
+
+  }
+
+  console.log('rerendered',data);
+
   return (
-    <Box h = '400vh' p = '10px'>
+    <Box w = '100%' p = '25px'>
 
-    <SimpleGrid columns = '5' gap = '10px'>
-    {data.map((el)=>{
-      return <ProductCard key={el.id} {...el}/>
-    })}
-    </SimpleGrid>
+        <SimpleGrid gap = '20px' columns={5}>
+                {Womens_Product.map((el) => <ProductCard key = {el.id} {...el} /> )}
+        </SimpleGrid>
+
+        <Box>
+          {Womens_Product.length !== 0 ? <PaginationComp page = {page} total = {total} ChangePage = {ChangePage}/> : null}
+        </Box>
+
     </Box>
   )
 }
 
-export default AllProducts                       
+export default AllProducts                   
